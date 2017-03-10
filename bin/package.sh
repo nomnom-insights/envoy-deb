@@ -1,5 +1,10 @@
+#!/usr/bin/env bash
+
+set -eo pipefail
+
 versionStr="1.2.0"
 
+mkdir -p /tmp/compile /tmp/build 
 bundle exec  pkgr package . \
        --env ENVOY \
        --user=envoy \
