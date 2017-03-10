@@ -1,2 +1,6 @@
 envoy
 *~
+enovy/*
+out/*
+
+*.deb
