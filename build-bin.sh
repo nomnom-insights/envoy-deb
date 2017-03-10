@@ -2,12 +2,13 @@
 
 set -eo pipefail
 
-ENVOY_ROOT=$(readlink -f ./envoy)
+here=$PWD
+ENVOY_ROOT=$PWD/envoy
 
 if [[ -e ./envoy ]] ; then
   cd $ENVOY_ROOT
   git pull -r
-  cd ..
+  cd $here
 else
   git clone git@github.com:lyft/envoy.git
 fi
