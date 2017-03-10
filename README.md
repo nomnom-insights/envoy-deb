@@ -1,6 +1,6 @@
 # :nope: this is still WIP
 
-make a debian/ubuntu package for envoy, with upstart scripts and all that
+make a Debian/ubuntu package for envoy, with upstart scripts and all that
 
 # how to
 
@@ -15,7 +15,7 @@ make a debian/ubuntu package for envoy, with upstart scripts and all that
 # Using packaged envoy
 
 - install the package (`dpkg -i`, add it to an apt repo etc)
-- create configiuration file
+- create configuration file
 - set config with: `sudo envoy config CONFIG_PATH=/path/to/json.conf.json`
 - start it: `sudo envoy scale envoy=1`
 
