@@ -1,6 +1,4 @@
-cd ./envoy
-versionStr="1.1.-$(git rev-parse --abbrev-ref HEAD)"
-cd ../bin
+versionStr="1.2.0"
 
 bundle exec  pkgr package . \
        --env ENVOY \
@@ -8,6 +6,6 @@ bundle exec  pkgr package . \
        --group=envoy \
        --runner=upstart-1.5 \
        --version="$versionStr" \
-       --buildpack=git@github.com:ph3nx/heroku-binary-buildpack.git \
+       --buildpack=https://github.com/ph3nx/heroku-binary-buildpack \
        --compile-cache-dir=/tmp/compile \
        --buildpacks-cache-dir=/tmp/build
