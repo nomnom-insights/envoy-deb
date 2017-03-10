@@ -6,8 +6,8 @@ docker build -t envoy-package .
 
 volPath=$PWD
 
-if [[ "$(uname) =  "Linux" ]] ; then
- usr="$USER:$USER
+if [[ "$(uname)" =  "Linux" ]] ; then
+ usr="$USER:$USER"
 else
  usr="root:root"
 fi

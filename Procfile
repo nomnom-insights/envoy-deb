@@ -1,1 +1,1 @@
-envoy: bin/envoy
+envoy: bin/envoy -c $CONFIG_PATH
