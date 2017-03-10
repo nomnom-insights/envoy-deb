@@ -2,7 +2,7 @@
 
 set -eo pipefail
 
-ENVOY_ROOT=./envoy
+ENVOY_ROOT=$(readlink -f ./envoy)
 
 if [[ -e ./envoy ]] ; then
   cd $ENVOY_ROOT
