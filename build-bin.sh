@@ -21,4 +21,4 @@ docker run -t -i \
        lyft/envoy-build:latest /bin/bash -c "cd /source && ci/do_ci.sh server_only"
 
 mkdir -p ./bin
-cp ./envoy/build/source/exe/envoy ./bin/envoy
+cp $(find . -type -f -name envoy) ./bin/envoy
