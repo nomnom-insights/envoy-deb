@@ -2,3 +2,4 @@ envoy
 *~
 *.deb
 test/*.test
+/.vagrant/*
