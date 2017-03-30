@@ -30,5 +30,5 @@ docker run -t -i \
        -v $ENVOY_ROOT:/source \
        lyft/envoy-build:latest /bin/bash -c "cd /source && ci/do_ci.sh server_only"
 
-mkdir -p ./bin
-cp $(find . -type f -name envoy) ./bin/envoy
+mkdir -p ./package-context/bin
+cp $(find ./envoy -type f -name envoy) ./package-context/bin/envoy
