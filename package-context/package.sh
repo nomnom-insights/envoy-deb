@@ -4,17 +4,12 @@ set -eo pipefail
 
 mkdir -p /tmp/compile /tmp/build
 
-if [[ "$DEBUGx" != "x" ]] ; then
-  DEBUG="--debug"
-fi
+version="1.2.0-$ENVOY_SHA"
 
-pkgr package . \
-     --verbose $DEBUG \
-     --disable-default-dependencies \
-     --name envoy \
-     --user envoy \
-     --group envoy \
-     --version "1.2.0-$ENVOY_SHA" \
-     --compile-cache-dir=/tmp/compile \
-     --buildpacks-cache-dir=/tmp/build \
-     --buildpack=https://github.com/ph3nx/heroku-binary-buildpack.git
+fpm -s dir \
+    -t deb \
+    -n envoy \
+    -v $version \
+    ./bin/envoy=/usr/bin/envoy \
+    ./envoy.conf=/etc/init/envoy.conf \
+    ./defaults=/etc/default/envoy

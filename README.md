@@ -15,9 +15,8 @@ make a Debian/ubuntu package for envoy, with upstart scripts and all that
 # Using packaged envoy
 
 - install the package (`dpkg -i`, add it to an apt repo etc)
-- create configuration file
-- set config with: `sudo envoy config CONFIG_PATH=/path/to/json.conf.json`
-- start it: `sudo envoy scale envoy=1`
+- create configuration file in `/etc/default/envoy` && `/path/to/envoy.json`
+- start it: `sudo service envoy start`
 
 if you change configuration you can now do:
 
@@ -33,9 +32,8 @@ if you change configuration you can now do:
 
 ## TODO
 
-- [ ] add all envoy flags to `Procfile` and expose them via ENV vars
 - [ ] make sure it works
-- [ ] add ulimit for upstart service definition
+- [x] add ulimit for upstart service definition
 
 
 ## License

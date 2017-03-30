@@ -1,0 +1,5 @@
+ENVOY_CONFIG_PATH=/etc/envoy.json
+ENVOY_LOG_FILE=/var/log/envoy.log
+ENVOY_LOG_LEVEL=debug
+ENVOY_SERVICE_CLUSTER=development
+ENVOY_SERVICE_NODE=node-1

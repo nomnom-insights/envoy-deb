@@ -1,1 +1,0 @@
-web: /opt/envoy/bin/envoy -c $ENVOY_CONFIG_PATH -l $ENVOY_LOG_LEVEL --service-cluster $ENVOY_SERVICE_CLUSTER --service-node $ENVOY_SERVICE_NODE 2>&1
