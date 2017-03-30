@@ -2,16 +2,26 @@
 
 set -eo pipefail
 
-here=$PWD
+buildVersion=${1:-master}
+
+here=$(pwd)
 ENVOY_ROOT=$PWD/envoy
 
 if [[ -e ./envoy ]] ; then
   cd $ENVOY_ROOT
+  git reset --hard
+  git checkout master
+  git fetch -a -p
   git pull -r
   cd $here
 else
   git clone git@github.com:lyft/envoy.git
 fi
+
+cd $ENVOY_ROOT
+echo "Building from $buildVersion"
+git checkout $buildVersion
+cd $here
 
 docker pull lyft/envoy-build:latest
 
